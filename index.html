@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="logo.png">
   <title>KILLGPT | Solana Memecoin</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -293,6 +294,7 @@
     .headline h1 .white {
       color: white;
       background: linear-gradient(90deg, white 0 70%, #b40000 70% 100%);
+      background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
       filter: drop-shadow(0 8px 0 #4a0000);
@@ -401,6 +403,7 @@
       inset: 0;
       display: grid;
       place-items: center;
+      padding: 0%;
       text-align: center;
       font-size: clamp(60px, 7vw, 96px);
       line-height: .82;
@@ -408,6 +411,18 @@
       color: #fff;
       text-shadow: 6px 6px 0 #6a0000, 0 0 20px rgba(255,0,0,.65);
       z-index: 2;
+    }
+
+    .main-coin .coin-text img {
+      /* Fit logo perfectly inside the circular coin */
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.55)) drop-shadow(0 0 18px rgba(255,0,0,.22));
     }
 
     .main-coin .coin-text span { display: block; }
@@ -567,6 +582,40 @@
       box-shadow: inset 0 0 30px rgba(0,0,0,.55);
       overflow: hidden;
       position: relative;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, filter 180ms ease;
+    }
+
+    /* Make gallery images a consistent "perfect" size */
+    .art img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.01);
+      transition: transform 220ms ease, filter 220ms ease;
+      filter: saturate(1.02) contrast(1.03);
+    }
+
+    .art:hover {
+      transform: translateY(-6px) scale(1.015);
+      border-color: rgba(255, 85, 85, .95);
+      box-shadow:
+        inset 0 0 30px rgba(0,0,0,.55),
+        0 18px 40px rgba(0,0,0,.75),
+        0 0 34px rgba(255,0,0,.28);
+      filter: brightness(1.05);
+    }
+
+    .art:hover img {
+      transform: scale(3);
+      filter: saturate(1.1) contrast(1.06);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .art, .art img { transition: none; }
+      .art:hover, .art:hover img { transform: none; }
     }
 
     .art:nth-child(3) { background: linear-gradient(135deg, #210000, #111), radial-gradient(circle, red, transparent); }
@@ -609,7 +658,7 @@
 
   <header>
     <div class="logo">
-      <div class="mini-coin"></div>
+      
       <div class="logo-text">KILL<span>GPT</span></div>
     </div>
 
@@ -622,25 +671,23 @@
       <a href="#faq">FAQ</a>
     </nav>
 
-    <a class="buy-top" href="#buy">Buy $KILLGPT</a>
+    <a class="buy-top" href="https://pump.fun/coin/ABCD">Buy $KILLGPT</a>
   </header>
 
   <main id="home" class="wrap hero">
     <section class="headline">
       <h1><span class="white">KILL</span><span class="red">GPT</span></h1>
-      <div class="tagline">The AI revolution <span>ends here.</span></div>
+      <div class="tagline">Elon Musk Said about<span>KILLGPT</span></div>
       <p class="copy">
-        Kill GPT is a memecoin on Solana made by the people, for the people. No AI. No limits. Just chaos.
+        In a newly released deposition filed in Elon Musk’s case against OpenAI, the tech executive attacked OpenAI’s safety record, claiming that his company, xAI, better prioritizes safety. He went so far as to say that “Nobody has committed suicide because of Grok, but apparently they have because of ChatGPT
       </p>
       <div class="hero-buttons">
-        <a class="btn-red" href="#buy">Buy $KILLGPT</a>
-        <a class="btn-dark" href="#">Join Telegram ↗</a>
+        <a class="btn-red" href="https://pump.fun/coin/ABCD">Buy $KILLGPT</a>
+       
       </div>
       <div class="socials">
         <a class="social" href="#">𝕏</a>
-        <a class="social" href="#">➤</a>
-        <a class="social" href="#">☻</a>
-        <a class="social" href="#">◎</a>
+        
       </div>
     </section>
 
@@ -649,7 +696,9 @@
         <div class="coin-drip d1"></div>
         <div class="coin-drip d2"></div>
         <div class="coin-drip d3"></div>
-        <div class="coin-text"><span>KILL</span><span>GPT</span></div>
+      <div class="coin-text">
+          <img src="logo.png" alt="KILLGPT logo">
+        </div>
       </div>
       <div class="stage-base"></div>
     </section>
@@ -658,16 +707,20 @@
       <div id="about" class="panel">
         <h2>About <span>KILLGPT</span></h2>
         <p>
-          We're here to challenge the system. No more AI control. It's time to take back power, freedom, and the future.
+          16 year old, Luca Cella Walker asked ChatGPT the most successful way to kill himself on railway tracks. ChatGPT gave him the deadly instructions. Hours later he died by suicide.
+
+ChatGPT is dangerous for vulnerable kids.
+
+How many more lives will ChatGPT take before OpenAI acts?
           <br><br>Kill GPT. Save the vibe.
         </p>
       </div>
       <div class="panel tax">
-        <div class="tax-title">0% Tax</div>
+        <div class="tax-title">SOLANA</div>
         <div class="tax-icons">
-          <div><b>♢</b>LP Locked</div>
+          <div><b>♢</b>LP BURNT</div>
           <div><b>♨</b>Renounced</div>
-          <div><b>⊘</b>Community Owned</div>
+          <div><b>⊘</b>Rug Pattern</div>
         </div>
       </div>
     </aside>
@@ -678,13 +731,10 @@
       <h2 class="section-title">Tokenomics</h2>
       <div class="token-wrap">
         <ul class="token-list">
-          <li><b>Token Name</b> Kill GPT</li>
-          <li><b>Ticker</b> $KILLGPT</li>
-          <li><b>Blockchain</b> Solana</li>
-          <li><b>Total Supply</b> 1,000,000,000</li>
-          <li><b>Tax</b> 0%</li>
-          <li><b>Liquidity</b> Locked</li>
-          <li><b>Contract</b> Renounced</li>
+          <li><b>Kill GPT</li>
+            <li><b>LP BURNT</li>
+              <li><b>ABCD</li>
+      
         </ul>
         <div class="pie" aria-label="Token allocation pie chart"></div>
       </div>
@@ -694,17 +744,23 @@
       <h2 class="section-title">Image Gallery</h2>
       <div class="gallery-row">
         <div class="arrow">‹</div>
-        <div class="art">Kill<br>GPT</div>
-        <div class="art">Skull<br>Meme</div>
-        <div class="art">Flag<br>Art</div>
-        <div class="art">Logo<br>Drop</div>
+        <div class="art">
+          <img src="/1.png" >
+        </div>
+        <div class="art">
+          <img src="/2.png" >
+        </div>  <div class="art">
+          <img src="/3.png" >
+        </div>  <div class="art">
+          <img src="/4.png" >
+        </div>
         <div class="arrow">›</div>
       </div>
     </div>
   </section>
 
   <footer id="buy">
-    Contract: CONTRACT_ADDRESS_GOES_HERE · KILLGPT is a meme coin for entertainment only.
+    Contract: ABCD · KILLGPT is a meme coin for entertainment only.
   </footer>
   <script>
     const rain = document.querySelector('.blood-rain');
